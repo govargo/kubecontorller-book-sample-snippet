@@ -44,7 +44,7 @@ func main() {
 				return
 			}
 			queue.Add(key)
-			log.Println("Added")
+            log.Println("Added: " + key)
 		},
 		UpdateFunc: func(old, new interface{}) {
 			var key string
@@ -54,7 +54,7 @@ func main() {
 				return
 			}
 			queue.Add(key)
-			log.Println("Updated")
+            log.Println("Updated: " + key)
 		},
 		DeleteFunc: func(old interface{}) {
 			var key string
@@ -64,7 +64,7 @@ func main() {
 				return
 			}
 			queue.Add(key)
-			log.Println("Deleted")
+            log.Println("Deleted: " + key)
 		},
 	})
 
