@@ -12,3 +12,5 @@ $ go run podinformer.go -kubeconfig <kubeconfig file>
 # e.g.
 $ go run podinformer.go -kubeconfig $HOME/.kube/config
 ```
+
+止める場合は「Ctrl + C」で止めてください
