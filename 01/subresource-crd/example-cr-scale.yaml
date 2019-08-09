@@ -1,0 +1,8 @@
+apiVersion: "stable.example.com/v1alpha"
+kind: Sample
+metadata:
+  name: my-cr-sample-object
+spec:
+  image: my-cr-image
+  message: "Hello Custom Resource!"
+  replicas: 1

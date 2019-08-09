@@ -1,0 +1,6 @@
+apiVersion: "stable.example.com/v1alpha"
+kind: Sample
+metadata:
+  name: my-cr-sample-object
+spec:
+  image: 100
