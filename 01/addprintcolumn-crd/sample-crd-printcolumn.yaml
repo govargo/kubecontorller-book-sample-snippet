@@ -5,9 +5,9 @@ metadata:
 spec:
   group: stable.example.com
   versions:
-   - name: v1alpha
-     served: true
-     storage: true
+  - name: v1alpha
+    served: true
+    storage: true
   scope: Namespaced
   names:
     kind: Sample
