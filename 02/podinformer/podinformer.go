@@ -9,11 +9,16 @@ import (
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
 	"log"
+	"os/user"
+	"path/filepath"
 	"time"
 )
 
 func main() {
-	kubeconfig := flag.String("kubeconfig", "~/.kube/config", "kubeconfig config file")
+	u, _ := user.Current()
+	defaultPath := filepath.Join(u.HomeDir, ".kube", "config")
+	// set kubeconfig flag
+	kubeconfig := flag.String("kubeconfig", defaultPath, "kubeconfig config file")
 	flag.Parse()
 	config, _ := clientcmd.BuildConfigFromFlags("", *kubeconfig)
 	clientset, err := kubernetes.NewForConfig(config)

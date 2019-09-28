@@ -6,14 +6,18 @@ import (
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
+	"os/user"
+	"path/filepath"
 )
 
 func main() {
+	u, _ := user.Current()
+	defaultPath := filepath.Join(u.HomeDir, ".kube", "config")
 	// set kubeconfig flag
-	kubeconfig := flag.String("kubeconfig", "~/.kube/config", "kubeconfig config file")
+	kubeconfig := flag.String("kubeconfig", defaultPath, "kubeconfig config file")
 	flag.Parse()
 
-	// retrive kubeconfig
+	// retrieve kubeconfig
 	config, _ := clientcmd.BuildConfigFromFlags("", *kubeconfig)
 
 	// get clientset for kubernetes resources
