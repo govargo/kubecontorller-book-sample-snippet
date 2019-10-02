@@ -8,12 +8,21 @@ import (
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/cache"
 	"k8s.io/client-go/tools/clientcmd"
+	"k8s.io/client-go/util/homedir"
 	"log"
+	"path/filepath"
 	"time"
 )
 
 func main() {
-	kubeconfig := flag.String("kubeconfig", "~/.kube/config", "kubeconfig config file")
+	var defaultKubeConfigPath string
+	if home := homedir.HomeDir(); home != "" {
+		// build kubeconfig path from $HOME dir
+		defaultKubeConfigPath = filepath.Join(home, ".kube", "config")
+	}
+
+	// set kubeconfig flag
+	kubeconfig := flag.String("kubeconfig", defaultKubeConfigPath, "kubeconfig config file")
 	flag.Parse()
 	config, _ := clientcmd.BuildConfigFromFlags("", *kubeconfig)
 	clientset, err := kubernetes.NewForConfig(config)
