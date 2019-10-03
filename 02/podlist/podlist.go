@@ -20,6 +20,8 @@ func main() {
 	// set kubeconfig flag
 	kubeconfig := flag.String("kubeconfig", defaultKubeConfigPath, "kubeconfig config file")
 	flag.Parse()
+
+	// retrieve kubeconfig
 	config, _ := clientcmd.BuildConfigFromFlags("", *kubeconfig)
 
 	// get clientset for kubernetes resources
