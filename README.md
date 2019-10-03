@@ -12,3 +12,9 @@
 |Before|After|
 |:---:|:---:|
 |kubeconfig := flag.String("kubeconfig", "~/.kube/config", "kubeconfig config file")|kubeconfig := flag.String("kubeconfig", defaultKubeConfigPath, "kubeconfig config file")|
+
+2019/10/03 Added comment to clientcmd.BuildConfigFromFlags [podlist.go](02/podlist/podlist.go#L24) 
+
+|Before|After|
+|:---:|:---:|
+||// retrieve kubeconfig|
