@@ -4,15 +4,15 @@ metadata:
   name: samples.stable.example.com
 spec:
   group: stable.example.com
-  versions:
-  - name: v1alpha
-    served: true
-    storage: true
   scope: Namespaced
   names:
     kind: Sample
     plural: samples
     singular: sample
     shortNames: ["sp"]
+  versions:
+  - name: v1alpha
+    served: true
+    storage: true
   subresources:
     status: {}

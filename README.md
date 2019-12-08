@@ -3,6 +3,8 @@
 
 ## Update History
 
+2019/12/09 Added CRD [apiextensions.k8s.io/v1 yaml](01) validation-crd/sample-crd-validation-ga.yaml, addprintcolumn-crd/sample-crd-printcolumn-ga.yaml, subresource-crd/sample-crd-status-ga.yaml, subresource-crd/sample-crd-scale-ga.yaml, defaulting-crd/ 
+
 2019/10/02 Modified way to set kubeconfig path flag [podlist.go](02/podlist/podlist.go#L9-L21)  
 
 2019/10/02 Modified way to set kubeconfig path flag [podinformer.go](02/podinformer/podinformer.go#L11-L25)   
