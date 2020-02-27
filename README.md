@@ -1,5 +1,8 @@
 # kubecontorller-book-sample-snippet
-技術書典7で頒布した「実践入門 Kubernetesカスタムコントローラへの道」の本文中に掲載したサンプルコード用のリポジトリです
+インプレスR&D NextPublishing出版「実践入門 Kubernetesカスタムコントローラへの道」の本文中に掲載したサンプルコード用のリポジトリです
+底本となった技術書典7で頒布したコードとも互換があります。
+
+https://nextpublishing.jp/book/11389.html
 
 ## Update History
 
